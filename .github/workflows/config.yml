@@ -1,0 +1,28 @@
+name: Express App Test
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  NODE_VERSION: 18.x
+
+jobs:
+  test-express-app:
+    runs-on: self-hosted
+    steps:
+    - name: Check out repository code ${{ github.repository }} on ${{ github.ref }}
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js ${{ env.NODE_VERSION }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm run test

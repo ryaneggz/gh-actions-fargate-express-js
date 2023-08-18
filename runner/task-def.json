@@ -1,0 +1,46 @@
+{
+    "containerDefinitions": [
+        {
+            "name": "github-runner",
+            "image": "ryaneggz/github-runner",
+            "cpu": 0,
+            "portMappings": [],
+            "essential": true,
+            "environment": [
+                {
+                    "name": "REPO_URL",
+                    "value": "https://github.com/ryaneggz/gh-actions-fargate-express"
+                },
+                {
+                    "name": "RUNNER_TOKEN",
+                    "value": "<runner-token>"
+                }
+            ],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-create-group": "true",
+                    "awslogs-group": "/ecs/expess-gh-actions-def",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            }
+        }
+    ],
+    "family": "task-defintion-gh-actions",
+    "executionRoleArn": "arn:aws:iam::123456789012:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "volumes": [],
+    "placementConstraints": [],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "3072",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    }
+}
