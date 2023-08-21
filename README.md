@@ -21,5 +21,11 @@ bash scripts/tasks/definition.sh
 3. Create a Task on cluster
 ```bash
 ## Will be prompted for REGION, CLUSTER_NAME, and TASK_DEF_NAME
-bash scripts/tasks/create.sh
+bash scripts/tasks/run.sh
+```
+
+4. Stop a Task on cluster
+```bash
+## Will be prompted for REGION, CLUSTER_NAME, and TASK_DEF_NAME
+bash scripts/tasks/stop.sh
 ```

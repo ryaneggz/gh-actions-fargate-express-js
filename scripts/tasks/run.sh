@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo ">>> *STILL UNDER DEVELOPMENT STUCK IN PENDING, use the GUI"
-
 # Prompt the user for the region
 echo "Please enter the AWS region:"
 read REGION
